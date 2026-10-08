@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Workspace Setup & Onboarding</title>
+    <style>
+        :root {
+            --primary: #0078d4;
+            --primary-dark: #005a9e;
+            --bg: #f3f2f1;
+            --text: #323130;
+            --muted: #605e5c;
+            --border: #edebe9;
+            --success: #107c41;
+        }
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #ffffff;
+            padding: 35px 25px;
+            text-align: center;
+        }
+        .header h1 { margin: 0 0 10px 0; font-size: 26px; }
+        .header p { margin: 0; opacity: 0.9; }
+        .support-strip {
+            background: #faf9f8;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .phone { font-weight: bold; color: var(--primary-dark); }
+        .web-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .web-link:hover { background: var(--primary); color: #fff; }
+        .selector { display: flex; justify-content: center; gap: 10px; padding: 20px; background: #fff; }
+        .btn {
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            background: #fff;
+            cursor: pointer;
+        }
+        .btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .content { padding: 25px; }
+        .card { border: 1px solid var(--border); border-radius: 6px; margin-bottom: 20px; }
+        .card-title { background: #faf9f8; padding: 12px 20px; font-weight: bold; border-bottom: 1px solid var(--border); }
+        .card-body { padding: 20px; }
+        .img-placeholder {
+            background: #f3f2f1;
+            border: 2px dashed #c8c6c4;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        .downloads { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .dl-card { border: 1px solid var(--border); padding: 15px; border-radius: 6px; flex: 1; min-width: 200px; text-align: center; }
+        .dl-btn { display: block; background: var(--success); color: #fff; text-decoration: none; padding: 8px; border-radius: 4px; margin-top: 10px; font-weight: bold; }
+        .alert { background: #fff8f0; border-left: 4px solid #f7630c; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mobile Workspace Setup & Onboarding</h1>
+            <p>Select your device operating system below to access targeted instructions and download links.</p>
+        </div>
+        <div class="support-strip">
+            <div class="phone">☎️ IT Help Desk Support: (412) 759-0788</div>
+            <a href="https://office.com" target="_blank" class="web-link">Verify Outlook Password Natively</a>
+        </div>
+        <div class="selector">
+            <button class="btn active" id="and-b" onclick="toggleOS('android')">Android Phone</button>
+            <button class="btn" id="app-b" onclick="toggleOS('apple')">Apple iPhone</button>
+        </div>
+        <div class="content">
+            <div class="card">
+                <div class="card-title">Step 1: Install Official Software Client</div>
+                <div class="card-body">
+                    <p id="step1-p">Open the Google Play Store on your mobile platform, search for <strong>Microsoft Outlook</strong>, install the package, and choose <strong>Add Account</strong>.</p>
+                    <div class="img-placeholder">[Replace this box with an image of Step 1]</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Step 2: Enter Account Identifier</div>
+                <div class="card-body">
+                    <p>Carefully type your full enterprise email profile string into the blank address text container and select <strong>Continue</strong>.</p>
+                    <div class="img-placeholder">[Replace this box with an image of Step 2]</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Step 3: Security Validation &amp; Passwords</div>
+                <div class="card-body">
+                    <p>Input your verified account security password string. Ensure that you immediately acknowledge and approve any automated Multi-Factor Authentication (MFA) or Microsoft Authenticator push alerts routed to your device.</p>
+                    <div class="img-placeholder">[Replace this box with an image of Step 3]</div>
+                </div>
+            </div>
+            <h3>Optional Secondary Productivity Frameworks</h3>
+            <div class="downloads">
+                <div class="dl-card">
+                    <strong>Microsoft OneDrive</strong>
+                    <p style="font-size: 13px; color: var(--muted); margin: 5px 0 0 0;">Access corporate files</p>
+                    <a href="https://google.com" id="dl-one" class="dl-btn" target="_blank">Get OneDrive</a>
+                </div>
+                <div class="dl-card">
+                    <strong>Microsoft Teams</strong>
+                    <p style="font-size: 13px; color: var(--muted); margin: 5px 0 0 0;">Collaborate with staff</p>
+                    <a href="https://google.com" id="dl-team" class="dl-btn" target="_blank">Get Teams</a>
+                </div>
+            </div>
+            <div class="alert">
+                <strong>💡 Note for Active App Users:</strong> If your Outlook app has a personal account loaded, click your Profile Icon (top left) > Settings Gear > Add Mail Account to begin configuration.
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleOS(type) {
+            const ab = document.getElementById('and-b'), ip = document.getElementById('app-b'), s1 = document.getElementById('step1-p'), o = document.getElementById('dl-one'), t = document.getElementById('dl-team');
+            if(type === 'android') {
+                ab.className = 'btn active'; ip.className = 'btn';
+                s1.innerHTML = 'Open the Google Play Store on your mobile platform, search for <strong>Microsoft Outlook</strong>, install the package, and choose <strong>Add Account</strong>.';
+                o.href = 'https://google.com';
+                t.href = 'https://google.com';
+            } else {
+                ip.className = 'btn active'; ab.className = 'btn';
+                s1.innerHTML = 'Open the native App Store on your iOS device, search for <strong>Microsoft Outlook</strong>, download the software client, and choose <strong>Add Account</strong>.';
+                o.href = 'https://apple.com';
+                t.href = 'https://apple.com';
+            }
+        }
+    </script>
+</body>
+</html>
